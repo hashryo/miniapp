@@ -1,3 +1,38 @@
-// Place all the styles related to the tweets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+  box-sizing: border-box;
+}
+.contents_row{
+  width: 100%;
+  background-color: black;
+}
+.content_post{
+  margin: auto;
+  height: 400px;
+  width: 700px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px;
+  position: relative;
+  font-size: 50px;
+  color: White;
+}
+.form{
+  text-align: center;
+  color:white;
+}
+.name{
+  font-size: 25px;
+}
+.more{
+  font-size: 12px;
+}
+
+.text{
+  text-align: left;
+}
+
+.username{
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
