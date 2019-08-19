@@ -1,3 +1,4 @@
+<li id="tweet-<%= tweet.id %>" data-tweet-id="<%= tweet.id %>">
 <div class="form">
    <div class="name"><%= tweet.user.nickname %></div>
    <% if user_signed_in? && current_user.id == tweet.user_id %>
@@ -11,4 +12,6 @@
    <% end %>
    <div class="content_post" style="background-image: url(<%= tweet.image %>)">
       <div class="prefectures"> <%= simple_format(tweet.prefectures) %></div>
+      <%= render "likes/like", tweet: tweet %>
    </div>
+</li>
