@@ -2,14 +2,14 @@
     <span class="like">
     <% if tweet.iine?(current_user) %>
       <%= form_for(tweet.likes.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
-        <%= button_tag(class: "btn btn-default btn-xs") do %>
+        <%= button_tag(class: "fav") do %>
           <%= content_tag :span, "#{tweet.likes_count}", class: "glyphicon glyphicon-heart" %>
         <% end %>
       <% end %>
     <% else %>
       <%= form_for(tweet.likes.new, remote: true) do |f| %>
         <div><%= hidden_field_tag :tweet_id, tweet.id %></div>
-        <%= button_tag(class: "btn btn-default btn-xs") do %>
+        <%= button_tag(class: "un-fav") do %>
           <%= content_tag :span, "#{tweet.likes_count}", class: "glyphicon glyphicon-heart-empty" %>
         <% end %>
       <% end %>

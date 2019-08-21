@@ -32,6 +32,9 @@
 
 .prefectures{
   text-align: left;
+  color: white;
+  font-weight: bold;
+  font-size: 70px;
 }
 
 .username{
@@ -46,4 +49,19 @@
 
 .field{
   padding-bottom: 10px;
+}
+
+.fav{
+  background-color: blue;
+}
+
+.un-fav{
+  background-color: red;
+}
+
+.edit_like{
+  text-align: right;
+}
+.new_like{
+  text-align: right;
 }
