@@ -5,7 +5,7 @@
   </div>
   <div class="field">
   <%= f.label :Prefectures %>
-  <%= f.text_area :prefectures , placeholder: 'Prefectures' %>
+  <%= f.collection_select :prefecture_ids, Prefecture.all, :id, :prefecture %>
   </div>
   <div class="field">
   <%= f.submit "Send" %>

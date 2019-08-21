@@ -5,3 +5,4 @@ class Like < ApplicationRecord
   validates :tweet_id, presence: true
   counter_culture :tweet
 end
+

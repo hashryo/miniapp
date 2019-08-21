@@ -11,7 +11,8 @@
 </div>
    <% end %>
    <div class="content_post" style="background-image: url(<%= tweet.image %>)">
-      <div class="prefectures"> <%= simple_format(tweet.prefectures) %></div>
+      <%# ここを編集 %>
+      <div class="prefectures"> <%= simple_format(tweet.prefectures&.first&.prefecture) %></div>
       <%= render "likes/like", tweet: tweet %>
    </div>
 </li>
