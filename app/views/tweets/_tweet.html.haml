@@ -1,0 +1,12 @@
+%li{"data-tweet-id" => "#{tweet.id}", :id => "tweet-#{tweet.id}"}
+  .form
+    .name= tweet.user.nickname
+    - if user_signed_in? && current_user.id == tweet.user_id
+      .more
+        = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get
+      .more
+        = link_to '削除', "/tweets/#{tweet.id}", method: :delete
+  .content_post{:style => "background-image: url(#{tweet.image})"}
+    .prefectures
+      = simple_format(tweet.prefectures&.first&.prefecture)
+    = render "likes/like", tweet: tweet

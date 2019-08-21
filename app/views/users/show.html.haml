@@ -1,0 +1,6 @@
+.contents_row
+  .username
+    %p= @nickname
+  - @tweets.each do |tweet|
+    .content_post{:style => "background-image: url(#{tweet.image});"}
+      = simple_format(tweet.prefectures&.first&.prefecture)

@@ -64,3 +64,5 @@ gem 'devise'
 gem 'pry-rails'
 gem 'counter_culture', '~> 1.8'
 gem 'jquery-rails'
+gem "font-awesome-rails"
+gem 'haml-rails'

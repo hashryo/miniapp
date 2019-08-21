@@ -1,9 +1,0 @@
-  <div class="contents_row" >
-    <div class="username"><p><%= @nickname %></p></div>
-    <% @tweets.each do |tweet| %>
-      <div class="content_post" style="background-image: url(<%= tweet.image %>);">
-        <%# ここを編集 %>
-        <%= simple_format(tweet.prefectures&.first&.prefecture) %>
-      </div>
-    <% end %>
-  </div>
