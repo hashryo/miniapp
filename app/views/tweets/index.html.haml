@@ -1,12 +1,19 @@
 .contents_row
+  .contents_row_weather
+    weather forecast
+    .result-city-name
+    .result-temp 
+    .result-weather
+
   .contents_row_left
     - @tweets.each do |tweet|
       = render partial: "tweet", locals: { tweet: tweet }
 
+
   .contents_row_right
     .ranking      
       .ranking_title
-        お気に入り数ランキング
+        User Ranking
       - @ranking.each.with_index(1) do |user,index|
         .user
           = index 

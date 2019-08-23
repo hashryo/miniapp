@@ -9,10 +9,6 @@ class TweetsController < RankingController
   def new
     @tweet = Tweet.new
   end
-  
-  def create
-    Tweet.create(tweet_params)
-  end
 
   def destroy
     tweet = Tweet.find(params[:id])
@@ -30,6 +26,10 @@ class TweetsController < RankingController
     if tweet.user_id == current_user.id
       tweet.update(tweet_params)
     end
+  end
+
+  def create
+    Tweet.create(tweet_params)
   end
 
   private
