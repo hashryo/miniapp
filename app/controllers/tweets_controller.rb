@@ -13,7 +13,7 @@ class TweetsController < RankingController
   def destroy
     tweet = Tweet.find(params[:id])
     if tweet.user_id == current_user.id
-       tweet.destroy
+      tweet.destroy
     end
   end
 

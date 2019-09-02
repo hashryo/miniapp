@@ -6,6 +6,7 @@
   position: fixed;
   z-index: 5;
 }
+
 .contents_row{
   padding-top: 64px;
   width: 100%;
@@ -81,7 +82,7 @@
   padding-bottom: 10px;
 }
 
-.fa{
+.fa-heart{
   color: red;
   background-color: black;
 }
@@ -114,4 +115,31 @@
 
 .success{
   padding-top: 64px;
+}
+
+.active{
+  color: red;
+  text-align: center;
+}
+
+.result-city-name{
+  padding-bottom: 20px;
+  font-size: x-large;
+  text-align: center;
+}
+
+.result-temp{
+  padding-bottom: 20px;
+  font-size: x-large;
+  text-align: center;
+}
+
+.result-weather{
+  padding-bottom: 20px;
+  font-size: x-large;
+  text-align: center;
+}
+
+.result-icon{
+  text-align: center;
 }
