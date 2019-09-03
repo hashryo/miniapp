@@ -1,19 +1,19 @@
 .contents_row
-  .contents_row_weather
+  .contents_row__weather
     weather forecast
-    .result-city-name
-    .result-temp 
-    .result-weather
-    .result-icon
-  .contents_row_left
+    .contents_row__weather__result-city-name
+    .contents_row__weather__result-temp 
+    .contents_row__weather__result-weather
+    .contents_row__weather__result-icon
+  .contents_row__left
     - @tweets.each do |tweet|
       = render partial: "tweet", locals: { tweet: tweet }
-  .contents_row_right
-    .ranking      
-      .ranking_title
+  .contents_row__right
+    .contents_row__right__ranking      
+      .contents_row__right__ranking__title
         Favorite Ranking
       - @ranking.each.with_index(1) do |user,index|
-        .user
+        .contents_row__right__ranking__title__user
           = index 
           位・・・
           = user.nickname
