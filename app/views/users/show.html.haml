@@ -1,7 +1,7 @@
 .contents_row
-  .contents_row_left
-    .username
+  .contents_row__left
+    .contents_row__left__username
       %p= @nickname
     - @tweets.each do |tweet|
-      .content_post{:style => "background-image: url(#{tweet.image});"}
+      .contents_row__left__content_post{:style => "background-image: url(#{tweet.image});"}
         = simple_format(tweet.prefectures&.first&.prefecture)

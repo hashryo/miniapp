@@ -1,0 +1,9 @@
+= form_for tweet do |f|
+  .field
+    = f.label :ImageUrl
+    = f.text_area :image , placeholder: 'ImageUrl'
+  .field
+    = f.label :Prefectures
+    = f.collection_select :prefecture_ids, Prefecture.all, :id, :prefecture
+  .field
+    = f.submit "Send"

@@ -4,7 +4,6 @@ class Tweet < ApplicationRecord
   has_many :iine_users, through: :likes, source: :user
   has_many :tweet_prefectures, dependent: :destroy
   has_many :prefectures, through: :tweet_prefectures, dependent: :destroy
- 
 
   def iine?(user)
     iine_users.include?(user)
