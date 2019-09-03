@@ -1,0 +1,13 @@
+%li{"data-tweet-id" => "#{tweet.id}", :id => "tweet-#{tweet.id}"}
+  .contents_row__left__form
+    .contents_row__left__form__name
+      = tweet.user.nickname
+    - if user_signed_in? && current_user.id == tweet.user_id
+      .contents_row__left__form__name__more
+        = link_to '編集', "/tweets/#{tweet.id}/edit", method: :get
+      .contents_row__left__form__name__more
+        = link_to '削除', "/tweets/#{tweet.id}", method: :delete
+  .contents_row__left__content_post{:style => "background-image: url(#{tweet.image})"}
+    .contents_row__left__content_post__prefectures
+      = simple_format(tweet.prefectures&.first&.prefecture)
+    = render "likes/like", tweet: tweet

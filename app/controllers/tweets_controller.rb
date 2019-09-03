@@ -1,18 +1,13 @@
-class TweetsController < ApplicationController
+class TweetsController < RankingController
 
   before_action :move_to_index, except: :index
 
   def index
-    @tweets = Tweet.includes(:user).order("created_at DESC")
+    @tweets = Tweet.includes(:user).order("likes_count DESC")
   end
 
   def new
     @tweet = Tweet.new
-  end
-  
-  def create
-    Tweet.create(image: tweet_params[:image], text: tweet_params[:text], user_id: current_user.id)
-    # render plain: params[:tweet].inspect
   end
 
   def destroy
@@ -33,9 +28,13 @@ class TweetsController < ApplicationController
     end
   end
 
+  def create
+    Tweet.create(tweet_params)
+  end
+
   private
   def tweet_params
-    params.require(:tweet).permit(:image, :text).merge(id: params[:id])
+    params.require(:tweet).permit(:image, :prefecture_ids).merge(user_id: current_user.id)
   end
 
   def move_to_index

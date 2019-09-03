@@ -10,14 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_04_041636) do
+ActiveRecord::Schema.define(version: 2019_08_21_012546) do
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "tweet_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tweet_id"], name: "index_likes_on_tweet_id"
+    t.index ["user_id", "tweet_id"], name: "index_likes_on_user_id_and_tweet_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "prefecture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tweet_prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "prefecture_id"
+    t.bigint "tweet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prefecture_id"], name: "index_tweet_prefectures_on_prefecture_id"
+    t.index ["tweet_id"], name: "index_tweet_prefectures_on_tweet_id"
+  end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "text"
     t.text "image"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "user_id"
+    t.integer "likes_count", default: 0, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -33,4 +58,6 @@ ActiveRecord::Schema.define(version: 2019_08_04_041636) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tweet_prefectures", "prefectures"
+  add_foreign_key "tweet_prefectures", "tweets"
 end

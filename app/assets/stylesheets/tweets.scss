@@ -1,38 +1,131 @@
 *{
   box-sizing: border-box;
 }
+
 .contents_row{
+  padding-top: 64px;
   width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  &__weather{
+    width: 10%;
+    color: white;
+    padding-top: 64px;
+    padding-bottom: 30px;
+    font-size: large;
+    position: fixed;
+    &__result-city-name{
+      padding-top: 15px;
+      padding-bottom: 20px;
+      font-size: x-large;
+      text-align: center;
+    }
+    &__result-temp{
+      padding-bottom: 20px;
+      font-size: x-large;
+      text-align: center;
+    }
+    &__result-weather{
+      padding-bottom: 20px;
+      font-size: x-large;
+      text-align: center;
+    }
+    &__result-icon{
+      text-align: center;
+    }
+  }
+  &__left{
+    width: 80%;
+    &__form{
+      text-align: center;
+      color:white;
+      &__name{
+        font-size: 25px;
+        &__more{
+          font-size: 12px;
+        }
+      }
+    }
+    &__username{
+      font-size: 30px;
+      text-align: center;
+      color: white;
+    }
+    &__content_post{
+      margin: auto;
+      height: 400px;
+      width: 700px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 3px;
+      position: relative;
+      font-size: 50px;
+      color: White;
+      margin-bottom: 50px;
+      &__prefectures{
+        text-align: left;
+        color: white;
+        font-weight: bold;
+        font-size: 70px;
+      }
+    }
+  }
+  &__right{
+    width: 30%;
+    color: white;
+    display: block;
+    &__ranking{
+      &__title{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-size: x-large;
+        text-align: center;
+        &__user{
+          height: 100px;
+          padding-bottom: 30px;
+          line-height: 100px;
+          font-size: large;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.field{
+  padding-bottom: 10px;
+}
+.new_tweet{
+  padding-top: 64px;
+}
+.edit_tweet{
+  padding-top: 64px;
+}
+#tweet_prefecture_ids{
+  display: block;
+}
+.success{
+  padding-top: 64px;
+}
+
+.edit_like{
+  text-align: right;
+}
+.new_like{
+  text-align: right;
+}
+.fa-heart{
+  color: red;
   background-color: black;
 }
-.content_post{
-  margin: auto;
-  height: 400px;
-  width: 700px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 3px;
-  position: relative;
-  font-size: 50px;
-  color: White;
-}
-.form{
+
+.active{
+  color: black;
   text-align: center;
-  color:white;
-}
-.name{
-  font-size: 25px;
-}
-.more{
-  font-size: 12px;
 }
 
-.text{
-  text-align: left;
-}
-
-.username{
-  font-size: 30px;
-  text-align: center;
-  color: white;
+.lime {
+  position: fixed;
+  z-index: 5;
 }

@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Miniapp
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    / Compiled and minified CSS
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css", :rel => "stylesheet"}/
+    / Compiled and minified JavaScript
+  %body
+    %nav.lime.darken-4
+      .nav-wrapper
+        %a.brand-logo{:href => "/"} Best Shot
+        %ul#nav-mobile.right.hide-on-med-and-down
+          - if user_signed_in?
+            %li
+              %a{:href => "/users/#{current_user.id}"} Mypage
+            %li= link_to "Logout", destroy_user_session_path, method: :delete
+            %li
+              %a.post{:href => "/tweets/new"} Newtweet
+            %li
+          - else
+            %li= link_to "Signup", new_user_registration_path, class: 'post'
+            %li= link_to "Login", new_user_session_path, class: 'post'
+    = yield
